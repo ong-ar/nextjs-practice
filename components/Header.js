@@ -28,13 +28,5 @@ export default () => (
         color: white;
       }
     `}</style>
-
-    <style jsx global>
-      {`
-        body {
-          background-color: red;
-        }
-      `}
-    </style>
   </header>
 );
