@@ -1,17 +1,34 @@
 import Head from "next/head";
-import withLayout from "../lib/withLayout";
 import PostLink from "../components/PostLink";
+import Axios from "axios";
 
-const Index = () => (
-  <div>
-    <Head>
-      <title>index</title>
-    </Head>
-    <h1>Posts:</h1>
-    <PostLink title="post 1" />
-    <br />
-    <PostLink title="post 2" />
-  </div>
-);
-
-export default Index;
+export default class extends React.Component {
+  static async getInitialProps() {
+    const {
+      data: {
+        data: { movies: posts }
+      }
+    } = await Axios.get("https://yts.am/api/v2/list_movies.json");
+    return {
+      posts
+    };
+  }
+  render() {
+    const { posts } = this.props;
+    return (
+      <div>
+        <Head>
+          <title>index</title>
+        </Head>
+        <h1>Posts:</h1>
+        <ul>
+          {posts.map(post => (
+            <li key={post.id}>
+              <PostLink title={post.title} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}

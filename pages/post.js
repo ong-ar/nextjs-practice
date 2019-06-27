@@ -10,4 +10,8 @@ const Post = props => (
     <p>post info</p>
   </div>
 );
+
+Post.getInitialProps = async () => {
+  return { title: "weoigheoighewioghweig" };
+};
 export default withRouter(Post);
