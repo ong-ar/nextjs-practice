@@ -1,5 +1,7 @@
 import Head from "next/head";
-export default () => (
+import withLayout from "../lib/withLayout";
+
+const About = () => (
   <div>
     <Head>
       <title>about</title>
@@ -7,3 +9,4 @@ export default () => (
     <h2>About page</h2>
   </div>
 );
+export default withLayout(About);
