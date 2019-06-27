@@ -1,0 +1,17 @@
+{
+  "name": "nextjs-practice",
+  "version": "1.0.0",
+  "repository": "https://github.com/ong-ar/nextjs-practice.git",
+  "author": "ong-ar <reclusis@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
